@@ -6,17 +6,15 @@ Aplicativo pessoal de organização construído somente com HTML5, CSS3 e JavaSc
 
 ## Funcionalidades atuais
 
-- Dashboard **Meu Dia** com data dinâmica, resumo, prioridades, agenda, progresso e alertas.
-- Navegação desktop completa com sidebar fixa e recolhível, tooltips no modo compacto e estados de módulos futuros.
-- Navegação inferior para mobile com Início, Agenda, Tarefas, Criar e Mais.
-- Design System centralizado em variáveis CSS e componentes reutilizáveis.
-- Componentes globais: botões, cards, inputs, selects, checkboxes, switches, badges, modais, dropdowns, tabs, progress bars, alertas, empty states e tooltips.
-- Modal demonstrativo responsivo para criação de itens, preparado para tarefas, gastos, metas e estudos.
-- Prioridades interativas com checkbox, status e contador atualizado.
-- Busca visual por prioridades e eventos.
-- Painéis de notificações e perfil.
-- Tema claro/escuro persistido em `localStorage`.
-- Layout responsivo para desktop, tablet e smartphone.
+- Dashboard Meu Dia com prioridades, agenda, progresso e alertas.
+- Navegação desktop/mobile e Design System centralizado.
+- Central de Criação Rápida acionada pelo botão `+`.
+- 12 tipos de registro: tarefas, eventos, gastos, receitas, metas, hábitos, refeições, água, treinos, compras, anotações e sessões de estudo.
+- Formulários dinâmicos com campos específicos por entidade.
+- Persistência em `localStorage`, com camada de repositório preparada para futura API.
+- CRUD de registros: criar, listar, editar e excluir.
+- Modal responsivo no desktop e bottom sheet no mobile.
+- Dark mode, busca, checkbox de prioridades, sidebar recolhível e navegação mobile preservados.
 
 ## Como executar
 
@@ -24,7 +22,7 @@ Abra `index.html` diretamente no navegador. Não há processo de build, servidor
 
 ## Arquitetura
 
-- `index.html`: interface, Design System, navegação e lógica organizada em funções.
+- `index.html`: interface, Design System e JavaScript modular da aplicação.
 - `.gitignore`: arquivos locais que não devem ser versionados.
 
-Novos módulos devem consumir as classes globais (`.btn`, `.card`, `.field`, `.badge`, `.modal`, `.progress`, `.alert`, etc.) e as variáveis de `:root`, mantendo a identidade visual consistente.
+A persistência está isolada no objeto `repository`, que pode ser substituído por chamadas a backend sem alterar os formulários ou a interface.
