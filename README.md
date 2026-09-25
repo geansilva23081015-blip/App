@@ -2,34 +2,28 @@
 
 **Minha vida. Meu controle. Meu sistema.**
 
-Aplicativo pessoal de organização construído apenas com HTML5, CSS3 e JavaScript puro.
+Aplicativo pessoal de organização construído somente com HTML5, CSS3 e JavaScript puro.
 
-## Funcionalidades
+## Entregue
 
-- Dashboard **Meu Dia** com data dinâmica, resumo, prioridades, agenda, progresso e alertas.
-- Navegação desktop completa, sidebar recolhível com tooltips e navegação inferior no mobile.
-- Design System centralizado com tokens de cores, espaçamento, tipografia, estados e componentes reutilizáveis.
-- Central de Criação Rápida com 12 tipos de registro: tarefa, evento, gasto, receita, meta, hábito, refeição, água, treino, compra, anotação e estudo.
-- Formulários dinâmicos com campos específicos para cada tipo.
-- Persistência real em `localStorage`, com repositório isolado para futura substituição por API.
-- Registros criados exibidos na seção “Meus registros”, com edição e exclusão funcionando.
-- Dark mode persistido, busca, checkboxes de prioridades, painéis e modal responsivo preservados.
+- Dashboard Meu Dia com data dinâmica, resumo, prioridades, agenda, progresso e alertas.
+- Sidebar desktop fixa, recolhível, com tooltips; navegação mobile inferior.
+- Design System centralizado em tokens CSS e componentes reutilizáveis.
+- Dark mode com preferências `light`, `dark` e `system`, salvo no `localStorage`.
+- Central de Criação Rápida com 12 tipos: tarefa, evento, gasto, receita, meta, hábito, refeição, água, treino, compra, anotação e estudo.
+- Formulários dinâmicos com campos específicos, validação nativa e layout responsivo.
+- CRUD funcional de registros: criar, visualizar, editar e excluir.
+- Persistência local isolada na camada `repository`, pronta para futura substituição por API.
 
 ## Como executar
 
-Abra `index.html` diretamente no navegador. Não há processo de build, servidor ou dependência externa.
+Abra `index.html` diretamente no navegador. Não há build, servidor ou dependência externa.
 
-## Correções desta versão
+## Verificação
 
-- Corrigida a navegação completa dos módulos, que havia sido reduzida na implementação anterior.
-- Corrigido o fluxo de busca para não apagar a dashboard ao trocar de rota.
-- Corrigida a Central de Criação Rápida: agora fechar, voltar, salvar, editar e excluir são operações funcionais.
-- Corrigida a persistência dos dados e a atualização visual da lista de registros após alterações.
-- Corrigido o uso de `crypto.randomUUID` com fallback para navegadores que não oferecem essa API.
+A versão atual foi reorganizada para eliminar regressões entre navegação e criação rápida: eventos de CRUD usam delegação, registros são escapados antes de renderizar e o estado de tema é aplicado de forma segura.
 
-## Arquitetura
+## Arquivos
 
-- `index.html`: marcação, Design System, navegação e JavaScript modular.
-- `.gitignore`: arquivos locais que não devem ser versionados.
-
-A camada `repository` concentra o armazenamento dos registros e pode ser trocada por um backend sem alterar os formulários ou componentes visuais.
+- `index.html`: estrutura, estilos, Design System, navegação e lógica da aplicação.
+- `.gitignore`: arquivos locais ignorados pelo Git.
